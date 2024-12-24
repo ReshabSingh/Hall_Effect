@@ -100,4 +100,35 @@ tr{
     font-size: 1vw;
 }
 
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    width: 80%; /* Adjust modal width */
+    max-width: 600px; /* Max width for larger screens */
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    animation: fadeIn 0.3s ease; /* Smooth fade-in animation */
+  }
 
+
+  .hidden {
+    display: none;
+  }
+  

@@ -17,7 +17,7 @@
     
     <!-- <body> -->
         <form>
-          <div class="container">
+          <div class="container" id="contentToDownload">
             <div class="row">
               <div class="col-xs-12 col-lg-5">
                 <div>
@@ -59,6 +59,26 @@
                         <td><input class="table-input" id="w-r" type="text" /></td>
                         <td><input class="table-input" id="V-r" type="text" /></td>
                       </tr>
+                      <tr>
+                        <td><input class="table-input" id="led-r" type="text" /></td>
+                        <td><input class="table-input" id="w-r" type="text" /></td>
+                        <td><input class="table-input" id="V-r" type="text" /></td>
+                      </tr>
+                      <tr>
+                        <td><input class="table-input" id="led-r" type="text" /></td>
+                        <td><input class="table-input" id="w-r" type="text" /></td>
+                        <td><input class="table-input" id="V-r" type="text" /></td>
+                      </tr>
+                      <tr>
+                        <td><input class="table-input" id="led-r" type="text" /></td>
+                        <td><input class="table-input" id="w-r" type="text" /></td>
+                        <td><input class="table-input" id="V-r" type="text" /></td>
+                      </tr>
+                      <tr>
+                        <td><input class="table-input" id="led-r" type="text" /></td>
+                        <td><input class="table-input" id="w-r" type="text" /></td>
+                        <td><input class="table-input" id="V-r" type="text" /></td>
+                      </tr>
                     </table>      
                   </div> 
                   <!-- Moved the calculation part below the tables -->
@@ -72,8 +92,8 @@
                     <!-- <button type="button" id="circ-comp" class="btn btn-outline-primary mr-4 mt-3 mb-3">Circuit Complete</button> -->
                     <div class="d-flex align-items-center mt-4">
                       
-                      <p class="h5 mt-1 mr-4">Select the LED:</p>
-                      <div class="dropdown">
+                      <p class="h5 mt-1 mr-4">Select the Current:</p>
+                      <!-- <div class="dropdown">
                         <button
                           class="btn btn-outline-primary dropdown-toggle"
                           type="button"
@@ -90,32 +110,48 @@
                           <li><a class="dropdown-item" href="#" data-value="Green">Green</a></li> 
                           <li><a class="dropdown-item" href="#" data-value="Blue">Blue</a></li>
                         </ul>
-                      </div>                      
+                      </div>   -->
+                      <input
+                      type="range"
+                      id="range"
+                      class="form-range my-3 w-50"
+                      min="1.0"
+                      max="5.0"
+                      step="0.5"
+                      value="1.0"
+                    />
+                      
                     </div>
                     
-                    <div class="d-flex align-items-center mt-3 mb-3">
+                    <div class="d-flex align-items-center mt-2 mb-3">
                       
-                      <p class="h5 mt-1 mr-4">Select the Voltage:</p>
+                      <p class="h5 mt-1 mr-4">Select the Hall current:</p>
                     <input
                       type="range"
                       id="range"
                       class="form-range my-3 w-50"
-                      min="0.0"
-                      max="4.0"
-                      step="0.2"
-                      value="0.0"
+                      min="1.0"
+                      max="5.0"
+                      step="0.5"
+                      value="1.0"
                     />
                     </div>
+                    
                     <div class="d-flex align-items-center">
-                      <button type="btn btn-primary" id="fill-table" class="btn btn-outline-primary mr-4">
+                      <button type="btn btn-primary" id="fillTableValue" class="btn btn-outline-primary mr-4">
                         Fill Table
                       </button>
                       <button type="btn btn-primary" id="showGraph" class="btn btn-outline-primary mr-4">
                         Show Graph
                       </button>
-                      <button type="button" class="btn btn-primary" id="downloadPdf">
+                      <button type="button" class="btn btn-primary" id="downloadPdf" onclick="downloadPDF()">
                         Download
                       </button>
+                    </div>
+
+                    <div class="d-block align-items-center mt-4">
+                      <button id="calculateHall" type="button" class="btn btn-outline-primary" onclick="toggleHallEffectTable()">Calculate Hall Coefficient and Carrier Concentration</button>
+                      <div id="results" class="hidden"></div>
                     </div>
                     
                   <div class="container">
@@ -127,7 +163,7 @@
                           <button id="closeModal" type="button">&times;</button>
                         </div>
                         <div class="modal-body">
-                          <canvas id="popupGraph" width=200 height=200 style=width:100px;height:100px>
+                          <canvas id="popupGraph" width="400" height="300" style=width:100px;height:100px>
                         </div>
                       </div>
                     </div>
@@ -155,9 +191,10 @@
 
     
     <script src="tableGraph.js"></script>
+    <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- <script src="index.js"></script> -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
     <script
@@ -190,10 +227,13 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
-   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
 </body>
 </html>
