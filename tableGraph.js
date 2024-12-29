@@ -488,3 +488,39 @@ ctx.fillRect(0, 0, 400, 300); // Draw background
 ctx.fillStyle = "black";
 ctx.font = "16px Arial";
 ctx.fillText("Sample Graph", 150, 150); // Add text for demonstration
+
+
+
+document.querySelectorAll('.dropdown-item').forEach((item) => {
+  item.addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    const selectedValue = this.getAttribute('data-value');
+    const dropdownButton = document.getElementById('dropdownMenuButton');
+
+    // Update the dropdown button's text to show the selected option
+    dropdownButton.textContent = this.textContent;
+
+    if (selectedValue === 'MFC') { 
+      document.querySelectorAll('.hallEffect').forEach((element) => 
+      { element.style.display = "none"; }); 
+    } else { document.querySelectorAll('.hallEffect').forEach((element) =>
+    { element.style.display = ""; });
+   }
+    // Perform actions with the selected value
+    // console.log('Selected bias type:', selectedValue);
+    // Example: Update the SVG displayed
+    document.getElementById('main-svg').setAttribute('data', selectedValue);
+  });
+});
+
+
+document.querySelectorAll('.dropdown-item').forEach((item) => { item.addEventListener('click', function(event) { event.preventDefault(); // Prevent default anchor behavior 
+const selectedValue = this.getAttribute('data-value'); 
+const objectElement = document.getElementById('main-svg'); 
+if (selectedValue === 'MFC') { 
+  objectElement.setAttribute('data', 'Hall_Effect_1.svg'); 
+} else if (selectedValue === 'HE') { 
+  objectElement.setAttribute('data', 'Hall_Effect_2.svg'); 
+} 
+});
+});

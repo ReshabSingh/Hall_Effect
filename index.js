@@ -13,3 +13,17 @@
 
 // // Log the new value
 // console.log("Updated value:", tspanElement.textContent);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const woodBlock = document.getElementById('g74');
+    console.log(woodBlock);
+
+    let translateX = -3.1517259;
+    let translateY = -48.970253;
+
+    woodBlock.addEventListener('click', () => {
+      translateX += 10;
+      translateY += 10;
+      woodBlock.setAttribute('transform', `translate(${translateX}, ${translateY})`);
+    });
+  });
