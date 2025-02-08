@@ -18,7 +18,19 @@
     <!-- <body> -->
         <form>
           <div class="container" id="contentToDownload">
-            <div class="row">
+            <div class="row flex-column-reverse flex-lg-row">
+              <div class="col-xs-12 col-lg-7 bt">
+                <div class="center-height">
+                  <div class="simulation-container">
+                    <object
+                      type="image/svg+xml"
+                      class="ml-4"
+                      id="main-svg"
+                      data="Hall_Effect_1.svg"
+                    ></object>
+                  </div>
+                </div>
+              </div>
               <div class="col-xs-12 col-lg-5">
                 <div>
                   <div class="tablehead obs spc" id="tablehead">
@@ -33,6 +45,11 @@
                         <th>Sr No.</th>
                         <th>Current (ma)</th>
                         <th>Hall-Voltage (mv)</th>
+                      </tr>
+                      <tr>
+                        <td><input class="table-input" id="led-r" type="text" /></td>
+                        <td><input class="table-input" id="w-r" type="text" /></td>
+                        <td><input class="table-input" id="V-r" type="text" /></td>
                       </tr>
                       <tr>
                         <td><input class="table-input" id="led-r" type="text" /></td>
@@ -188,18 +205,6 @@
                     </div>
                     
                   </div>         
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-lg-7 bt">
-                <div class="center-height">
-                  <div class="simulation-container">
-                    <object
-                      type="image/svg+xml"
-                      class="ml-4"
-                      id="main-svg"
-                      data="Hall_Effect_1.svg"
-                    ></object>
                   </div>
                 </div>
               </div>
