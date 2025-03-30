@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hall Effect</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -71,7 +71,12 @@
                                 <td><input class="table-input" id="w-r" type="text"></td>
                                 <td><input class="table-input" id="V-r" type="text"></td>
                                 </tr>
-                                <!-- Repeat for 8 more rows -->
+                                <tr>
+                                  <td><input class="table-input" id="led-r" type="text"></td>
+                                  <td><input class="table-input" id="w-r" type="text"></td>
+                                  <td><input class="table-input" id="V-r" type="text"></td>
+                                  </tr>
+                                
                             </table>
                         </div>
                         <!-- Calculation Section -->
@@ -112,10 +117,10 @@
 
                         <!-- Action Buttons -->
                         <div class="d-flex align-items-center">
-                            <button type="button" id="fillTableValue" class="btn btn-outline-primary mr-4" disabled>
+                            <button type="button" id="fillTableValue" class="btn btn-outline-primary mr-4" >
                                 Fill Table
                             </button>
-                            <button type="button" id="showGraph" class="btn btn-outline-primary mr-4" disabled>
+                            <button type="button" id="showGraph" class="btn btn-outline-primary mr-4" onclick="showGraph()" disabled>
                                 Show Graph
                             </button>
                             <button type="button" id="downloadPdf" class="btn btn-primary" onclick="downloadPDF()" disabled>
@@ -124,13 +129,13 @@
                         </div>
 
                         <!-- Hall Effect Calculation -->
-                        <div class="d-block align-items-center mt-4">
+                        <!-- <div class="d-block align-items-center mt-4">
                             <button id="calculateHall" type="button" class="btn btn-outline-primary" 
                                 onclick="toggleHallEffectTable()">
                                 Calculate Hall Coefficient and Carrier Concentration
                             </button>
                             <div id="results" class="hidden"></div>
-                        </div>
+                        </div> -->
 
                         <!-- Graph Modal -->
                         <div class="container">
@@ -166,8 +171,7 @@
     <!-- Scripts -->
     <!-- Custom Scripts -->
     <script src="tableGraph.js"></script>
-    <script src="index.js"></script>
-    <script src="index2.js"></script>
+    <script src="assets/index.js"></script>
 
     <!-- Third-party Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
