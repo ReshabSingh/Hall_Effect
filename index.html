@@ -3,251 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hall eff</title>
+    <title>Hall Effect</title>
     <link rel="stylesheet" href="style.css">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    
-    <!-- <body> -->
-        <form>
-          <div class="container" id="contentToDownload">
+    <form>
+        <div class="container" id="contentToDownload">
             <div class="row">
-              <div class="col-xs-12 col-lg-5">
-                <div>
-                  <div class="tablehead obs spc" id="tablehead">
-                    <h4>OBSERVATION TABLE</h4>
-                  </div>
-                  <div class="table mt-4">
-                    <table id="table1" class="w-100">
-                      <tr>
-                        <th class="tablehead" colspan="3">Halls Effect</th>
-                      </tr>
-                      <tr>
-                        <th>Sr No.</th>
-                        <th>Current (ma)</th>
-                        <th>Hall-Voltage (mv)</th>
-                      </tr>
-                      <tr>
-                        <td><input class="table-input" id="led-r" type="text" /></td>
-                        <td><input class="table-input" id="w-r" type="text" /></td>
-                        <td><input class="table-input" id="V-r" type="text" /></td>
-                      </tr>
-                      <tr>
-                        <td><input class="table-input" id="led-r" type="text" /></td>
-                        <td><input class="table-input" id="w-r" type="text" /></td>
-                        <td><input class="table-input" id="V-r" type="text" /></td>
-                      </tr>
-                      <tr>
-                        <td><input class="table-input" id="led-r" type="text" /></td>
-                        <td><input class="table-input" id="w-r" type="text" /></td>
-                        <td><input class="table-input" id="V-r" type="text" /></td>
-                      </tr>
-                      <tr>
-                        <td><input class="table-input" id="led-r" type="text" /></td>
-                        <td><input class="table-input" id="w-r" type="text" /></td>
-                        <td><input class="table-input" id="V-r" type="text" /></td>
-                      </tr>
-                      <tr>
-                        <td><input class="table-input" id="led-r" type="text" /></td>
-                        <td><input class="table-input" id="w-r" type="text" /></td>
-                        <td><input class="table-input" id="V-r" type="text" /></td>
-                      </tr>
-                      <tr>
-                        <td><input class="table-input" id="led-r" type="text" /></td>
-                        <td><input class="table-input" id="w-r" type="text" /></td>
-                        <td><input class="table-input" id="V-r" type="text" /></td>
-                      </tr>
-                      <tr>
-                        <td><input class="table-input" id="led-r" type="text" /></td>
-                        <td><input class="table-input" id="w-r" type="text" /></td>
-                        <td><input class="table-input" id="V-r" type="text" /></td>
-                      </tr>
-                      <tr>
-                        <td><input class="table-input" id="led-r" type="text" /></td>
-                        <td><input class="table-input" id="w-r" type="text" /></td>
-                        <td><input class="table-input" id="V-r" type="text" /></td>
-                      </tr>
-                      <tr>
-                        <td><input class="table-input" id="led-r" type="text" /></td>
-                        <td><input class="table-input" id="w-r" type="text" /></td>
-                        <td><input class="table-input" id="V-r" type="text" /></td>
-                      </tr>
-                    </table>      
-                  </div> 
-                  <!-- Moved the calculation part below the tables -->
-                  <div class="mt-3">
-                    <div class="tablehead obs spc text-center">
-                      <h4>CALCULATION</h4>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center mt-3">
-                    <p class="h5 mt-1 mr-4">Select the procedure: </p>
-                    <div class="dropdown">
-                        <button
-                          class="btn btn-outline-primary dropdown-toggle"
-                          type="button"
-                          id="dropdownMenuButton"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                        Magnetic field Vs Current
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><a class="dropdown-item gauss" href="#" data-value="MFC">Magnetic Field vs Current</a></li>
-                          <li><a class="dropdown-item hall" href="#" data-value="HE">Hall Effect</a></li>
-                        </ul>
-                      </div>  
-                  </div>
-                  <!-- Controls -->
-                  <div class="">
-                    <!-- <button type="button" id="circ-comp" class="btn btn-outline-primary mr-4 mt-3 mb-3">Circuit Complete</button> -->
-                    <div class="d-flex align-items-center mt-3">
-                      
-                      <p class="h5 mt-1 mr-4">Select the Current:</p>
-                      <!-- <div class="dropdown">
-                        <button
-                          class="btn btn-outline-primary dropdown-toggle"
-                          type="button"
-                          id="dropdownMenuButton"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          Red
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><a class="dropdown-item" href="#" data-value="Red">Red</a></li>
-                          <li><a class="dropdown-item" href="#" data-value="Yellow">Yellow</a></li>
-                          <li><a class="dropdown-item" href="#" data-value="Green">Green</a></li> 
-                          <li><a class="dropdown-item" href="#" data-value="Blue">Blue</a></li>
-                        </ul>
-                      </div>   -->
-                      <input
-                      type="range"
-                      id="range"
-                      class="form-range my-3 w-50 curr"
-                      min="1.0"
-                      max="5.0"
-                      step="0.5"
-                      value="1.0"
-                    />
-                      
-                    </div>
-                    
-                    <div class="d-flex align-items-center mt-2 mb-3" >
-                      
-                      <p class="h5 mt-1 mr-4 hallEffect">Select the Hall current:</p>
-                    <input 
-                      type="range"
-                      id="range2"
-                      class="form-range my-3 w-50 hallEffect"
-                      min="1.0"
-                      max="5.0"
-                      step="0.5"
-                      value="1.0"
-                    />
-                    </div>
-                    
-                    <div class="d-flex align-items-center">
-                      <button type="btn btn-primary" id="fillTableValue" class="btn btn-outline-primary mr-4">
-                        Fill Table
-                      </button>
-                      <button type="btn btn-primary" id="showGraph" class="btn btn-outline-primary mr-4">
-                        Show Graph
-                      </button>
-                      <button type="button" class="btn btn-primary" id="downloadPdf" onclick="downloadPDF()">
-                        Download
-                      </button>
-                    </div>
+                <!-- Left Column -->
+                <div class="col-xs-12 col-lg-5">
+                    <div>
+                        <!-- Observation Table -->
+                        <div class="tablehead obs spc" id="tablehead">
+                            <h4>OBSERVATION TABLE</h4>
+                        </div>
+                        <div class="table mt-4">
+                            <table id="table1" class="w-100">
+                                <tr>
+                                    <th class="tablehead" colspan="3">Halls Effect</th>
+                                </tr>
+                                <tr>
+                                    <th>Sr No.</th>
+                                    <th>Current (ma)</th>
+                                    <th>Hall-Voltage (mv)</th>
+                                </tr>
+                                <!-- Table Rows -->
+                                <tr>
+                                    <td><input class="table-input" id="led-r" type="text"></td>
+                                    <td><input class="table-input" id="w-r" type="text"></td>
+                                    <td><input class="table-input" id="V-r" type="text"></td>
+                                </tr>
+                                <tr>
+                                  <td><input class="table-input" id="led-r" type="text"></td>
+                                  <td><input class="table-input" id="w-r" type="text"></td>
+                                  <td><input class="table-input" id="V-r" type="text"></td>
+                                </tr>
+                                <tr>
+                                <td><input class="table-input" id="led-r" type="text"></td>
+                                <td><input class="table-input" id="w-r" type="text"></td>
+                                <td><input class="table-input" id="V-r" type="text"></td>
+                                </tr>
+                                <tr>
+                                <td><input class="table-input" id="led-r" type="text"></td>
+                                <td><input class="table-input" id="w-r" type="text"></td>
+                                <td><input class="table-input" id="V-r" type="text"></td>
+                                </tr>
+                                <tr>
+                                <td><input class="table-input" id="led-r" type="text"></td>
+                                <td><input class="table-input" id="w-r" type="text"></td>
+                                <td><input class="table-input" id="V-r" type="text"></td>
+                                </tr>
+                                <tr>
+                                <td><input class="table-input" id="led-r" type="text"></td>
+                                <td><input class="table-input" id="w-r" type="text"></td>
+                                <td><input class="table-input" id="V-r" type="text"></td>
+                                </tr>
+                                <tr>
+                                <td><input class="table-input" id="led-r" type="text"></td>
+                                <td><input class="table-input" id="w-r" type="text"></td>
+                                <td><input class="table-input" id="V-r" type="text"></td>
+                                </tr>
+                                <tr>
+                                <td><input class="table-input" id="led-r" type="text"></td>
+                                <td><input class="table-input" id="w-r" type="text"></td>
+                                <td><input class="table-input" id="V-r" type="text"></td>
+                                </tr>
+                                <!-- Repeat for 8 more rows -->
+                            </table>
+                        </div>
 
-                    <div class="d-block align-items-center mt-4">
-                      <button id="calculateHall" type="button" class="btn btn-outline-primary" onclick="toggleHallEffectTable()">Calculate Hall Coefficient and Carrier Concentration</button>
-                      <div id="results" class="hidden"></div>
-                    </div>
-                    
-                  <div class="container">
-                    <!-- Custom Modal created for popup graph-->
-                    <div class="modal" id="graphModal">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5>Graph</h5>
-                          <button id="closeModal" type="button">&times;</button>
+                        <!-- Calculation Section -->
+                        <div class="mt-3">
+                            <div class="tablehead obs spc text-center">
+                                <h4>CALCULATION</h4>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                          <canvas id="popupGraph" width="400" height="300" style=width:100px;height:100px>
+
+                        <!-- Procedure Selection -->
+                        <div class="d-flex align-items-center mt-3">
+                            <p class="h5 mt-1 mr-4">Select the procedure: </p>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Magnetic field Vs Current
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item gauss" href="#" data-value="mfc">Magnetic Field vs Current</a></li>
+                                    <li><a class="dropdown-item hall" href="#" data-value="he">Hall Effect</a></li>
+                                </ul>
+                            </div>
                         </div>
-                      </div>
+
+                        <!-- Current Selection -->
+                        <div class="d-flex align-items-center mt-3">
+                            <p class="h5 mt-1 mr-4">Select the Current:</p>
+                            <input type="range" id="range" class="form-range my-3 w-50 curr"
+                                min="1.0" max="5.0" step="0.5" value="1.0">
+                        </div>
+
+                        <!-- Hall Current Selection -->
+                        <div class="d-flex align-items-center mt-2 mb-3">
+                            <p class="h5 mt-1 mr-4 hallEffect">Select the Hall current:</p>
+                            <input type="range" id="range2" class="form-range my-3 w-50 hallEffect"
+                                min="1.0" max="5.0" step="0.5" value="1.0">
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex align-items-center">
+                            <button type="button" id="fillTableValue" class="btn btn-outline-primary mr-4" disabled>
+                                Fill Table
+                            </button>
+                            <button type="button" id="showGraph" class="btn btn-outline-primary mr-4" disabled>
+                                Show Graph
+                            </button>
+                            <button type="button" id="downloadPdf" class="btn btn-primary" onclick="downloadPDF()" disabled>
+                                Download
+                            </button>
+                        </div>
+
+                        <!-- Hall Effect Calculation -->
+                        <div class="d-block align-items-center mt-4">
+                            <button id="calculateHall" type="button" class="btn btn-outline-primary" 
+                                onclick="toggleHallEffectTable()">
+                                Calculate Hall Coefficient and Carrier Concentration
+                            </button>
+                            <div id="results" class="hidden"></div>
+                        </div>
+
+                        <!-- Graph Modal -->
+                        <div class="container">
+                            <div class="modal" id="graphModal">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5>Graph</h5>
+                                        <button id="closeModal" type="button">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <canvas id="popupGraph" width="400" height="300" style="width:100px;height:100px">
+                                        </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                  </div>         
-                  </div>
                 </div>
-              </div>
-              <div class="col-xs-12 col-lg-7 bt">
-                <div class="center-height">
-                  <div class="simulation-container" id="svg-container" style="width: 100%; height: 100%; min-height: 400px;">
-                  </div>
+
+                <!-- Right Column - SVG Container -->
+                <div class="col-xs-12 col-lg-7 bt">
+                    <div class="center-height">
+                        <div class="simulation-container" id="svg-container" 
+                            style="width: 100%; height: 100%; min-height: 400px;">
+                            <object data="./assets/mfc.svg" type="image/svg+xml"></object>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-            
-        </form>
+        </div>
+    </form>
 
-    
+    <!-- Scripts -->
+    <!-- Custom Scripts -->
     <script src="tableGraph.js"></script>
     <script src="index.js"></script>
     <script src="index2.js"></script>
+
+    <!-- Third-party Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"
-    ></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    
-    
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    
 </body>
 </html>
