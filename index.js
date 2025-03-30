@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', function() {
     // Select all dropdown items
     const dropdownItems = document.querySelectorAll('.dropdown-item');
@@ -37,3 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+=======
+ document.getElementById("svg1").addEventListener("load", function() {
+        let svgdoc = this.contentDocument;  // Get the SVG document inside the object
+        let textElement = svgdoc.getElementById("text124"); // Adjust ID as needed
+
+        // Update SVG text when the slider moves
+      document.getElementById("range").addEventListener("input", function() {
+            textElement.textContent = parseFloat(this.value).toFixed(4);
+      });
+});
+>>>>>>> 7839e1b986ee32b88f111e3c2443ba9669aeb56c

@@ -126,9 +126,20 @@ tr{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     animation: fadeIn 0.3s ease; /* Smooth fade-in animation */
   }
-
-
+  
   .hidden {
     display: none;
   }
   
+  @media (max-width: 767px) {
+    .row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .bt {
+        order: -1;
+    }
+    .col-xs-12 {
+        width: 100%;
+    }
+}
